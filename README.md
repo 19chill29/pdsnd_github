@@ -7,7 +7,7 @@
 bike share
 
 ### Description
-Describe what your project is about and what it does
+This program will get user input to identify a city and check for validity. This program will return user status common stations, times, and durations of bike rides. The user will also have the option to have returned row data until it is no longer requested.
 
 ### Files used
 Include the files used
