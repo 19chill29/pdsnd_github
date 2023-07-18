@@ -33,15 +33,15 @@ def get_filters():
         month = input('January, February, March, April, May, June, July, August, September, October, Novemeber, December, or all: ').lower
              
     print('Choose a day')
-    day = input('Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, or all: ').lower()
+    week_day = input('Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, or all: ').lower()
     #added while loop to check if day input was valid
-    while day not in DAYS:
+    while week_day not in DAYS:
         print("Invalid Selection")
-        day = input('Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, or all: ').lower()
+        week_day = input('Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, or all: ').lower()
  
 
     print('-'*40)
-    return city_tour, month, day
+    return city_tour, month, week_day
 
 
 def load_data(city, month, day):
