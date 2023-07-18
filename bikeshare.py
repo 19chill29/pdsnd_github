@@ -9,6 +9,7 @@ CITY_DATA = { 'chicago': 'chicago.csv',
 MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december', 'all']
 #days list to make sure user input is correct
 DAYS = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'all']
+#gets user input to identify the city.csv file
 def get_filters():
     """
     Asks user to specify a city, month, and day to analyze.
@@ -44,7 +45,7 @@ def get_filters():
     print('-'*40)
     return city, month, day
 
-
+#loads the data
 def load_data(city, month, day):
     """
     Loads data for the specified city and filters by month and day if applicable.
@@ -76,7 +77,7 @@ def load_data(city, month, day):
 
     return df
 
-
+#returns common times of travel
 def time_stats(df):
     """Displays statistics on the most frequent times of travel."""
 
@@ -102,7 +103,7 @@ def time_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-
+#returns common stations
 def station_stats(df):
     """Displays statistics on the most popular stations and trip."""
 
@@ -126,7 +127,7 @@ def station_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-
+#returns common trip durations
 def trip_duration_stats(df):
     """Displays statistics on the total and average trip duration."""
 
@@ -144,7 +145,7 @@ def trip_duration_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-
+#returns user stats
 def user_stats(df):
     """Displays statistics on bikeshare users."""
 
@@ -167,6 +168,7 @@ def user_stats(df):
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
+#displays data from user input
 def display_data(df):
 
     start, end = 0
