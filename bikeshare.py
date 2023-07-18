@@ -21,10 +21,10 @@ def get_filters():
     """
     print('Hello! Let\'s explore some US bikeshare data!')
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
-    city = input('Please select Chicago, New York City, or Washington to explore: ').lower()
-    while city not in CITY_DATA:
+    city_tour = input('Please select Chicago, New York City, or Washington to explore: ').lower()
+    while city_tour not in CITY_DATA:
         print('Invalid seletion')
-        city = input('Please select Chicago, New York City, or Washington to explore:' ).lower()
+        city_tour = input('Please select Chicago, New York City, or Washington to explore:' ).lower()
 
              # TO DO: get user input for month (all, january, february, ... , june)
     print('Choose a month')
@@ -35,15 +35,15 @@ def get_filters():
         month = input('January, February, March, April, May, June, July, August, September, October, Novemeber, December, or all: ').lower
              
     print('Choose a day')
-    day = input('Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, or all: ').lower()
+    week_day = input('Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, or all: ').lower()
     #added while loop to check if day input was valid
-    while day not in DAYS:
+    while week_day not in DAYS:
         print("Invalid Selection")
-        day = input('Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, or all: ').lower()
+        week_day = input('Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, or all: ').lower()
  
 
     print('-'*40)
-    return city, month, day
+    return city_tour, month, week_day
 
 #loads the data
 def load_data(city, month, day):
@@ -172,41 +172,41 @@ def user_stats(df):
 def display_data(df):
 
     start, end = 0
-    answer = ''
+    user_input = ''
     #get user input
-    while answer != 'yes' or answer != 'no':
-        answer = input("Would you like to display 5 rows of data: yes or no").lower()
-        if answer == 'yes':
+    while user_input != 'yes' or user_input != 'no':
+        user_input = input("Would you like to display 5 rows of data: yes or no").lower()
+        if user_input == 'yes':
             #get first row
             end += 5
             data = df.iloc[start:end, :9]
             print(data)
-        elif: answer == 'no':
+        elif: user_input == 'no':
             print("No data displayed")
             break
         else:
             print("Invalid response")
-            answer = input("Please select yes or no").lower()
+            user_input = input("Please select yes or no").lower()
       #check if user wants to see more data and loop until the condition is broken     
-    while answer == 'yes':
+    while user_input == 'yes':
         print("would you like to see more data")
         #set display counter to 5
         start += 5
         end += 5
-        answer = input("yes or no").lower
-        if answer == 'yes' or answer == 'no':
+        user_input = input("yes or no").lower
+        if user_input == 'yes' or user_input == 'no':
             if answer =='yes':
                 #return next 5 rows
                 data = df.iloc[start:end, :9]
                 print(data)
-            elif: answer == 'no':
+            elif: user_input == 'no':
                 print("No data displayed")
                 break
             else:
                 break
         else:
             print("Invalid response")
-            answer = input("Please select yes or no").lower()
+            user_input = input("Please select yes or no").lower()
             
     
 
