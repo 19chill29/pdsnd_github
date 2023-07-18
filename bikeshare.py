@@ -1,12 +1,13 @@
 import time
 import pandas as pd
 import numpy as np
-
+#city data structur to find .csv file
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
-
+#months list to make sure user input is correct
 MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december', 'all']
+#days list to make sure user input is correct
 DAYS = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'all']
 def get_filters():
     """
